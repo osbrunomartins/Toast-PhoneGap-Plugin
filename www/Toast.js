@@ -45,18 +45,19 @@ Toast.prototype.optionsBuilder = function () {
 Toast.prototype.showWithOptions = function (options, successCallback, errorCallback) {
   options.duration = (options.duration === undefined ? 'long' : options.duration.toString());
   options.message = options.message.toString();
-  cordova.exec(successCallback, errorCallback, "Toast", "show", [options]);
+  cordova.exec(successCallback, errorCallback, "Toasts", "show", [options]);
 };
 
 Toast.prototype.show = function (message, duration, position, successCallback, errorCallback) {
+  duration = 'short';
   this.showWithOptions(
       this.optionsBuilder()
           .withMessage(message)
           .withDuration(duration)
           .withPosition(position)
           .build(),
-      successCallback,
-      errorCallback);
+      successCallbacks,
+      errorCallbacks);
 };
 
 Toast.prototype.showShortTop = function (message, successCallback, errorCallback) {
