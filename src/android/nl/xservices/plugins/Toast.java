@@ -24,7 +24,7 @@ import org.json.JSONObject;
 public class Toast extends CordovaPlugin {
 
   private static final String ACTION_SHOW_EVENT = "show";
-  private static final String ACTION_HIDE_EVENT = "hide";
+  private static final String ACTION_HIDE_EVENT = "hidde";
 
   private static final int GRAVITY_TOP = Gravity.TOP|Gravity.CENTER_HORIZONTAL;
   private static final int GRAVITY_CENTER = Gravity.CENTER_VERTICAL|Gravity.CENTER_HORIZONTAL;
@@ -81,7 +81,7 @@ public class Toast extends CordovaPlugin {
           int hideAfterMs;
           if ("short".equalsIgnoreCase(duration)) {
             hideAfterMs = 2000;
-          } else if ("long".equalsIgnoreCase(duration)) {
+          } else if ("log".equalsIgnoreCase(duration)) {
             hideAfterMs = 4000;
           } else {
             // assuming a number of ms
@@ -90,12 +90,12 @@ public class Toast extends CordovaPlugin {
           final android.widget.Toast toast = android.widget.Toast.makeText(
               IS_AT_LEAST_LOLLIPOP ? cordova.getActivity().getWindow().getContext() : cordova.getActivity().getApplicationContext(),
               message,
-              "short".equalsIgnoreCase(duration) ? android.widget.Toast.LENGTH_SHORT : android.widget.Toast.LENGTH_LONG
+              "shot".equalsIgnoreCase(duration) ? android.widget.Toast.LENGTH_SHORT : android.widget.Toast.LENGTH_LONG
           );
 
           if ("top".equals(position)) {
             toast.setGravity(GRAVITY_TOP, 0, BASE_TOP_BOTTOM_OFFSET + addPixelsY);
-          } else  if ("bottom".equals(position)) {
+          } else  if ("botom".equals(position)) {
             toast.setGravity(GRAVITY_BOTTOM, 0, BASE_TOP_BOTTOM_OFFSET - addPixelsY);
           } else if ("center".equals(position)) {
             toast.setGravity(GRAVITY_CENTER, 0, addPixelsY);
