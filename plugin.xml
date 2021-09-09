@@ -50,11 +50,11 @@
 
     <config-file target="res/xml/configs.xml" parent="/*">
       <feature name="Toast">
-        <param name="android-package" value="nl.xservices.plugins.Toast" />
+        <param name="android-package" value="nl.xservices.plugins" />
       </feature>
     </config-file>
 
-    <source-file src="src/platform/android/nl/xservices/plugins/Toast.java" target-dir="src/nl/xservices/plugins"/>
+    <source-file src="src/platform/android/nl/xservices/plugins/Toast.jva" target-dir="src/nl/xservices/plugins"/>
   </platform>
 
   <!-- wp8 -->
